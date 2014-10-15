@@ -1,0 +1,7 @@
+06 jul 2014 10:10:13,020 INFO  ~ Starting C:\workspace\asys\.
+06 jul 2014 10:10:13,026 INFO  ~ Module deadbolt is available (C:\workspace\asys\.\modules\deadbolt-1.4.3)
+06 jul 2014 10:10:13,027 INFO  ~ Module search is available (C:\workspace\asys\.\modules\search-2.0)
+06 jul 2014 10:10:13,029 INFO  ~ Module secure is available (C:\play\modules\secure)
+06 jul 2014 10:10:14,054 WARN  ~ You're running Play! in DEV mode
+06 jul 2014 10:10:16,308 INFO  ~ Connected to jdbc:postgresql://localhost/asys
+06 jul 2014 10:10:17,873 INFO  ~ Application 'asys' is now started !

@@ -1,0 +1,45 @@
+#{extends 'main.html' /}
+
+#{if flash.get("mensaje")}
+<div style="margin-top:0.5em; font-size:1.5em;">${flash.get("mensaje")}</div>
+#{/if}
+
+<table>
+<tr>
+<td style="padding-right:1em;">
+<div class="header-nivel-2">Conectar a mi cuenta APP.SECURE</div>
+
+
+
+#{form @Secure.authenticate()} 
+#{if flash.error}
+<p class="error">&{flash.error}</p>
+#{/if} #{if flash.success}
+<p class="success">&{flash.success}</p>
+#{/if}
+
+<div>
+
+<div style="margin:4px 0 4px;">Por favor completa los datos y presiona enviar.</div>
+<div style="margin:0.7em 0 4px;">Email o nombre de usuario</div>
+#{field "username"}
+<div style="margin:4px 0 4px;"><input type="text" name="${field.name}" id="username" value="${field.value}" size="16" /></div>
+#{/field}
+<div style="margin:4px 0 4px;">Contraseña(alexTest)</div>
+<div style="margin:4px 0 4px;"><input type="password" name="password" id="password" value="" size="16"/></div>
+<div style="margin:4px 0 4px;"><input type="checkbox" name="remember" id="remember" value="true" ${flash.remember ? 'checked="true" ' : ''} /> Recordarme en este computador</div>
+<div style="margin:1em 0 4px;"><input value="Enviar" name="Enviar" type="submit"></div>
+
+
+</div>				
+
+#{/form}
+
+</td></tr>
+</table>
+
+<script>
+$(document).ready(function() { 
+	$("input[type='text']:first", document.forms[0]).focus();
+});
+</script>				
