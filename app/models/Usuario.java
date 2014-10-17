@@ -165,6 +165,7 @@ public abstract class Usuario extends Model implements RoleHolder,
 		return result;
 
 	}
+	
 
 	public boolean esEstudiante() {
 		return true;
