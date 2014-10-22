@@ -1,55 +1,6 @@
-17 oct 2014 09:12:15,963 INFO  ~ Starting C:\workspace\asys
-17 oct 2014 09:12:15,977 INFO  ~ Module deadbolt is available (C:\workspace\asys\modules\deadbolt-1.4.3)
-17 oct 2014 09:12:15,979 INFO  ~ Module search is available (C:\workspace\asys\modules\search-2.0)
-17 oct 2014 09:12:15,982 INFO  ~ Module secure is available (C:\play\modules\secure)
-17 oct 2014 09:12:17,061 WARN  ~ You're running Play! in DEV mode
-17 oct 2014 09:12:17,153 INFO  ~ Listening for HTTP on port 9000 (Waiting a first request to start) ...
-17 oct 2014 09:12:27,040 INFO  ~ Connected to jdbc:postgresql://localhost/asys
-17 oct 2014 09:12:29,781 INFO  ~ Application 'asys' is now started !
-17 oct 2014 09:12:32,248 ERROR ~ 
-
-@6jpm8oa8k
-Internal Server Error (500) for request GET /
-
-Execution exception (In /app/controllers/GlobalController.java around line 24)
-VerifyError occured : Expecting a stack map frame Exception Details:   Location:     controllers/Secure$Security.authentify(Ljava/lang/String;Ljava/lang/String;)Z @33: istore_3   Reason:     Error exists in the bytecode   Bytecode:     0000000: b800 7d12 782b b800 7a12 712a b800 77bb     0000010: 0010 59b7 0012 bf3a 0403 3eb8 0080 1904     0000020: bf3e b800 821d ac                         Exception Handler Table:     bci [0, 23] => handler: 23   Stackmap Table:     same_locals_1_stack_item_frame(@23,Object[#55]) 
-
-play.exceptions.JavaExecutionException: Expecting a stack map frame
-Exception Details:
-  Location:
-    controllers/Secure$Security.authentify(Ljava/lang/String;Ljava/lang/String;)Z @33: istore_3
-  Reason:
-    Error exists in the bytecode
-  Bytecode:
-    0000000: b800 7d12 782b b800 7a12 712a b800 77bb
-    0000010: 0010 59b7 0012 bf3a 0403 3eb8 0080 1904
-    0000020: bf3e b800 821d ac                      
-  Exception Handler Table:
-    bci [0, 23] => handler: 23
-  Stackmap Table:
-    same_locals_1_stack_item_frame(@23,Object[#55])
-
-	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:237)
-	at Invocation.HTTP Request(Play!)
-Caused by: java.lang.VerifyError: Expecting a stack map frame
-Exception Details:
-  Location:
-    controllers/Secure$Security.authentify(Ljava/lang/String;Ljava/lang/String;)Z @33: istore_3
-  Reason:
-    Error exists in the bytecode
-  Bytecode:
-    0000000: b800 7d12 782b b800 7a12 712a b800 77bb
-    0000010: 0010 59b7 0012 bf3a 0403 3eb8 0080 1904
-    0000020: bf3e b800 821d ac                      
-  Exception Handler Table:
-    bci [0, 23] => handler: 23
-  Stackmap Table:
-    same_locals_1_stack_item_frame(@23,Object[#55])
-
-	at controllers.GlobalController.initUser(GlobalController.java:24)
-	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:510)
-	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
-	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
-	at play.mvc.ActionInvoker.handleBefores(ActionInvoker.java:328)
-	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:142)
-	... 1 more
+22 oct 2014 16:10:21,265 INFO  ~ Starting C:\workspace\asys
+22 oct 2014 16:10:21,265 INFO  ~ Module deadbolt is available (C:\workspace\asys\modules\deadbolt-1.4.3)
+22 oct 2014 16:10:21,265 INFO  ~ Module search is available (C:\workspace\asys\modules\search-2.0)
+22 oct 2014 16:10:21,265 INFO  ~ Module secure is available (C:\play\modules\secure)
+22 oct 2014 16:10:22,339 WARN  ~ You're running Play! in DEV mode
+22 oct 2014 16:10:22,460 ERROR ~ Could not bind on port 9000
