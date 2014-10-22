@@ -9,7 +9,10 @@ import models.*;
 
 public class Application extends GlobalController {
 
-    public static void index() {
+
+	public static void index() {
+   		
+    		
         render();
     }
 
