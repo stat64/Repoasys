@@ -50,12 +50,6 @@
 	<input type="text" id="search"  size="40"/>
     <input type="submit" id="submit" value="Buscar" class="btn btn-danger">
 
-    Numero de Resultados:    
-    <select id="size">
-        <option value="5">5</option>
-        <option value="10">10</option>
-        <option value="20">20</option>
-    </select>
 <br>
 <div id="result">
 </div>
@@ -69,18 +63,21 @@
         sessvars.page = 1
     }
    
+    /*
     if(sessvars.size == undefined) {
         sessvars.size = 5
     }
+    */
     
-    $('#size option[value='+sessvars.size+']').attr('selected', 'true')
+    //$('#size option[value='+sessvars.size+']').attr('selected', 'true')
     
     // Search function
     var search = function() {
         sessvars.search = $('#search').val()
-        sessvars.size = $('#size').val()
+        //sessvars.size = $('#size').val()
         var listAction = #{jsAction @list(':search', ':size', ':page') /} 
-        $('#result').load(listAction({search: sessvars.search, size: sessvars.size, page: sessvars.page}), function() {
+        //$('#result').load(listAction({search: sessvars.search, size: sessvars.size, page: sessvars.page}), function() {
+        $('#result').load(listAction({search: sessvars.search, size: 5, page: sessvars.page}), function() {
             $('#content').css('visibility', 'visible')
         })
     }
