@@ -1,36 +1,78 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 
 <html>
-<head>
-<title>ASYS</title>
-<meta charset="UTF-8">
+	<head>
+		<title>Aerial by HTML5 UP</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="/public/template/css/ie/html5shiv.js"></script><![endif]-->
+		<script src="/public/template/js/skel.min.js"></script>
+		<script src="/public/template/js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="/public/template/css/skel.css" />
+			<link rel="stylesheet" href="/public/template/css/style.css" />
+			<link rel="stylesheet" href="/public/template/css/style-wide.css" />
+			<link rel="stylesheet" href="/public/template/css/style-noscript.css" />
+		</noscript>
+		<!--[if lte IE 9]><link rel="stylesheet" href="/public/template/css/ie/v9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="/public/template/css/ie/v8.css" /><![endif]-->
+	</head>
+	<body class="loading">
+		<div id="wrapper">
+			<div id="bg"></div>
+			<div id="overlay"></div>
+			<div id="main">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>Adam Jensen</h1>
+						<p>Security Chief &nbsp;&bull;&nbsp; Cyborg &nbsp;&bull;&nbsp; Never asked for this</p>
+						<nav>
+							<ul>
+								<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+								<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+								<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+							</ul>
+						</nav>
 
 
-</head>
-<body>
-	<div id="container">
+						
+						
+#{if flash.get("mensaje")}
+<div style="margin-top:0.5em; font-size:1.5em;">${flash.get("mensaje")}</div>
+#{/if}
 
-		<div id="header">	
-				<h1 style="padding-left: 3px; line-height: 1.5em; color:white;">ASYS </h1>
-			
-		</div>
-		<div id="body">
-		before		
-		<li><a href="@{Secure.logout}">Salir </a>
-		</li> 
-			#{doLayout /}
-		afters	
-		</div>
-		
-		
-			<div id="footer">
 
+<table>
+<tr>
+<td>
+<div id="body">
+before		
+<li><a href="@{Secure.logout}">Salir </a>
+</li> 
+	#{doLayout /}
+afters	
+</div>
+</td>
+</tr>
+</table>
+						
+						
+					</header>
+
+
+				<!-- Footer -->
+					<footer id="footer">
+						<span class="copyright">.</span>
+					</footer>
+				
 			</div>
-		
-
 		</div>
-	</div>
-
-</body>
-
+	</body>
 </html>
+
+
+				

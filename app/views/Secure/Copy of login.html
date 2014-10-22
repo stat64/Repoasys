@@ -37,28 +37,11 @@
 								<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
 							</ul>
 						</nav>
-
-
 						
 						
 #{if flash.get("mensaje")}
 <div style="margin-top:0.5em; font-size:1.5em;">${flash.get("mensaje")}</div>
 #{/if}
-
-
-<table>
-<tr>
-<td>
-<div id="body">
-before		
-<li><a href="@{Secure.logout}">Salir </a>
-</li> 
-	#{doLayout /}
-afters	
-</div>
-</td>
-</tr>
-</table>
 
 <table>
 <tr>
