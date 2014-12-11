@@ -1,9 +1,5 @@
 <!DOCTYPE HTML>
-<!--
-	Telephasic by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+
 <html>
 	<head>
 		<title>ASYS</title>
@@ -21,11 +17,71 @@
         <script src="@{'/public/javascripts/sessvars.js'}" type="text/javascript" charset="${_response_encoding}"></script>
 		
 		
-		<noscript>
+		<noscript>	
 			<link rel="stylesheet" href="/public/template2/css/skel.css" />
 			<link rel="stylesheet" href="/public/template2/css/style.css" />
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="/public/template2/css/ie/v8.css" /><![endif]-->
+																					
+		<link rel="stylesheet" href="/public/template2/css/styleAsys.css" />
+		
+		<style>
+
+		
+		</style>
+	
+		<script type="text/javascript" charset="${_response_encoding}">
+		    // Rebuild state
+		    $(document).ready(function(){
+			    $('#search').val(sessvars.search)    
+			    if(sessvars.page == undefined) {
+			        sessvars.page = 1
+			    }
+			   
+			    /*
+			    if(sessvars.size == undefined) {
+			        sessvars.size = 5
+			    }
+			    */
+			    
+			    //$('#size option[value='+sessvars.size+']').attr('selected', 'true')
+			    
+			    // Search function
+			    var search = function() {
+			        sessvars.search = $('#search').val()
+			        //sessvars.size = $('#size').val()
+			        var listAction = #{jsAction @list(':search', ':size', ':page') /} 
+			        //$('#result').load(listAction({search: sessvars.search, size: sessvars.size, page: sessvars.page}), function() {
+			        $('#result').load(listAction({search: sessvars.search, size: 5, page: sessvars.page}), function() {
+			            $('#content').css('visibility', 'visible')
+			        })
+			    }
+			    
+			    // Events handler
+			    $('#submit').click(function() {    	
+			        sessvars.page = 1
+			        search()
+			        
+			    })
+			    $('#search').keyup(function() {
+			        sessvars.page = 1
+			        search()
+			    })
+			    $('#nextPage').live('click', function(e) {
+			        sessvars.page = $(this).attr('href')
+			        e.preventDefault()
+			        search()        
+			    })
+			    
+			    // Init
+			    if(sessvars.search != undefined) {
+			        $('#content').css('visibility', 'hidden')
+			        search()
+			    }   	
+		    });
+		</script>
+	
+		
 	</head>
 	<body class="homepage">
 
@@ -42,7 +98,7 @@
 								<li>
 									<a href="">Malla Curricular</a>
 									<ul>
-										<li><a href="#">Lorem ipsum dolor</a></li>
+										<li><a href="#">Sistemas e Informática</a></li>
 										<li><a href="#">Magna phasellus</a></li>
 										<li><a href="#">Etiam dolore nisl</a></li>
 										<li>
@@ -68,7 +124,7 @@
 				<!-- Hero -->
 					<section id="hero" class="container">
 						<header>
-							<h1><IMG SRC="/public/images/asys3.png"></h1>						
+							<h1><img src="/public/images/asys3.png"></h1>						
 						</header>
 						<ul class="actions">
 							<li style="align:middle;">
@@ -82,17 +138,31 @@
 						</ul>
 						<ul class="actions">
 							<li>
-								<a href="#" class="button">
-								</a>
-								<div id="result" style="background: #fff;border-color: rgba(255,255,255,0);color: #f08c89;font-size: 1.25em;">
-								</div>								
+
+								<table style="width:600px;color:#000;">
+									<tr >
+									  <td style="height:10px;">
+									  		<div id="result">
+											</div>
+									  </td>
+									</tr>
+								</table>								
+									
+								<!-- 
+								<div id="researching" style="background: #FFF; padding: 20px;  height:20% ;">
+								</div>
+								<a href="#" class="button"></a>	
+								-->						
 							</li>
 						</ul>
 					</section>
 					
+
+					
 					<div id="copyright" class="container">
 						<ul class="menu">
-							<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							<li>Universidad Técnica de Cotopaxi, Av. Simón Rodríguez s/n Barrio El Ejido Sector San Felipe.Latacunga - Ecuador.
+Teléfonos: (593) 03 2252205 / 2252307 / 2252346</a></li>
 						</ul>
 					</div>
 
@@ -103,51 +173,3 @@
 		
 </html>
 
-<script type="text/javascript" charset="${_response_encoding}">
-    // Rebuild state
-    $('#search').val(sessvars.search)    
-    if(sessvars.page == undefined) {
-        sessvars.page = 1
-    }
-   
-    /*
-    if(sessvars.size == undefined) {
-        sessvars.size = 5
-    }
-    */
-    
-    //$('#size option[value='+sessvars.size+']').attr('selected', 'true')
-    
-    // Search function
-    var search = function() {
-        sessvars.search = $('#search').val()
-        //sessvars.size = $('#size').val()
-        var listAction = #{jsAction @list(':search', ':size', ':page') /} 
-        //$('#result').load(listAction({search: sessvars.search, size: sessvars.size, page: sessvars.page}), function() {
-        $('#result').load(listAction({search: sessvars.search, size: 5, page: sessvars.page}), function() {
-            $('#content').css('visibility', 'visible')
-        })
-    }
-    
-    // Events handler
-    $('#submit').click(function() {    	
-        sessvars.page = 1
-        search()
-        
-    })
-    $('#search').keyup(function() {
-        sessvars.page = 1
-        search()
-    })
-    $('#nextPage').live('click', function(e) {
-        sessvars.page = $(this).attr('href')
-        e.preventDefault()
-        search()        
-    })
-    
-    // Init
-    if(sessvars.search != undefined) {
-        $('#content').css('visibility', 'hidden')
-        search()
-    }    
-</script>
